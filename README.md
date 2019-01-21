@@ -1,4 +1,4 @@
 # mGitBook
 
-gitbook test
+gitbook test.
 
