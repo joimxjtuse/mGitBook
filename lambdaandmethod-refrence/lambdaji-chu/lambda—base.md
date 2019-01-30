@@ -19,7 +19,7 @@ x -> 2 * x
 // 4. 接收2个int型整数，返回它们的差和.
 (int x, int y) -> x + y
 
-// 5. 接收一个String对象，并在控制台打印，无返回值.
+// 5. 接收一个String对象，并在控制台打印 ，无返回值.
 (String s) -> System.out.print(s)
 ```
 
