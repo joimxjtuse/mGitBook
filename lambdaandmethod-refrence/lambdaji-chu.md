@@ -112,5 +112,9 @@ Arrays.sort(players, c);
 Arrays.sort(players,(String s1, String s2) -> s1.compareTo(s2));
 ```
 
+* 将Lambda与Stream结合使用
+
+Stream 是对集合的封装，通常与Lambda一起使用。
+
 
 
