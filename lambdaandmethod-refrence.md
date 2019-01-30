@@ -1,9 +1,7 @@
 * Lambda 表达式基础语法
 
 ```
-(parameters) -> expression
-or
-(parameters) -> {statements;}
+(parameters) -> expression  or  (parameters) -> {statements;}
 ```
 
 Java中lambda表达式的简单例子。
