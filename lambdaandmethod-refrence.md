@@ -4,7 +4,7 @@
 (parameters) -> expression  or  (parameters) -> {statements;}
 ```
 
-  以下，是Java中lambda表达式的简单例子。
+以下，是Java中Lambda表达式的简单例子。
 
 ```
 // 1. 不需要参数，返回值.
