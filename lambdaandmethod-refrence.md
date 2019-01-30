@@ -34,6 +34,12 @@ String[] atp = {"Rafael Nadal", "Novak Djokovic",
        "Andy Murray","Tomas Berdych",  
        "Juan Martin Del Potro"};
 List<String> players =  Arrays.asList(atp);
+
+// jdk8之前
+for(String player: players){
+    System.out.println(player + "; "); 
+}
+
 ```
 
 
