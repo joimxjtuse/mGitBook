@@ -67,10 +67,17 @@ new Thread(new Runnable(){
         }
 }).start();
 
+Runnable runnable1 = new Runnable(){
+        @Override
+        public void run(){
+                System.out.println("Hello world !");
+        }
+};
+
 //使用Labmda表达式
 new Thread(() -> System.out.println("Hello world !")).start();
 
-
+Runnable runnable2 = () -> System.out.println("Hello world !")
 ```
 
 
