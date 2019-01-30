@@ -105,7 +105,7 @@ Arrays.sort(players,
     }
 );
 //Lambda：
-Arrays.sort(players,(s1, s2) -> s1.compareTo(s2));
+Arrays.sort(players,(String s1, String s2) -> s1.compareTo(s2));
 ```
 
 
