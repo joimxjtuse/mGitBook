@@ -98,13 +98,12 @@ String[] players = {"Rafael Nadal", "Novak Djokovic",
 Arrays.sort(players,
     new Comparator<String>(){
         @Override
-public int compare(String s1, String s2) {  
-        return (s1.compareTo(s2));  
-    }  
+        public int compare(String s1, String s2) {  
+            return (s1.compareTo(s2));  
+        }  
     }
-    
-);
 
+);
 ```
 
 
