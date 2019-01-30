@@ -19,8 +19,6 @@ x -> 2 * x
 (int x, int y) -> x + y
 // 5. 接收一个String对象，并在控制台打印，无返回值.
 (String s) -> System.out.print(s)
-
-
 ```
 
 
