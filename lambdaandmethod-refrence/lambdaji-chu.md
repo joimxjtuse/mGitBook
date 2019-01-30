@@ -106,6 +106,8 @@ Arrays.sort(players,
 );
 
 //Lambda：
+Comparator<String> c = (String s1, String s2) -> s1.compareTo(s2);
+Arrays.sort(players, c);
 Arrays.sort(players,(String s1, String s2) -> s1.compareTo(s2));
 ```
 
