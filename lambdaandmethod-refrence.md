@@ -40,6 +40,8 @@ for(String player: players){
     System.out.println(player + "; "); 
 }
 
+//使用Lambda表达式及函数式来表示.
+
 ```
 
 
