@@ -89,12 +89,23 @@ String[] players = {"Rafael Nadal", "Novak Djokovic",
     "Stanislas Wawrinka", "David Ferrer",  
     "Roger Federer", "Andy Murray",  
     "Tomas Berdych", "Juan Martin Del Potro",  
-    "Richard Gasquet", "John Isner"};  
+    "Richard Gasquet", "John Isner"};
 ```
 
+```
+根据玩家的名字来排序。
+使用匿名内部类：
+Arrays.sort(players,
+    new Comparator<String>(){
+        @Override
+public int compare(String s1, String s2) {  
+        return (s1.compareTo(s2));  
+    }  
+    }
+    
+);
 
-
-
+```
 
 
 
