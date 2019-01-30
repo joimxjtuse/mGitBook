@@ -1,4 +1,4 @@
-* Lambda 表达式基础语法
+* **Lambda 表达式基础语法**
 
 ```
 (parameters) -> expression  or  (parameters) -> {statements;}
@@ -22,6 +22,10 @@ x -> 2 * x
 // 5. 接收一个String对象，并在控制台打印，无返回值.
 (String s) -> System.out.print(s)
 ```
+
+* **基本Lambda表达式举例**
+
+让我们通过一些基本的例子来了解下Lambda表达式是怎么影响我们的日常编码的。假设有一个玩家列表，为了遍历这个列表，在JDK8之前，我们可能使用for-each循环来实现.
 
 
 
