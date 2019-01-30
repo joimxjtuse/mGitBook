@@ -67,8 +67,9 @@ new Thread(new Runnable(){
         }
 }).start();
 
-
 //使用Labmda表达式
+new Thread(() -> System.out.println("Hello world !")).start();
+
 
 ```
 
