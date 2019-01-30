@@ -27,5 +27,13 @@ x -> 2 * x
 
 让我们通过一些基本的例子来了解下Lambda表达式是怎么影响我们的日常编码的。假设有一个玩家列表，为了遍历这个列表，在JDK8之前，我们可能使用for-each循环来实现.
 
+```
+String[] atp = {"Rafael Nadal", "Novak Djokovic",  
+       "Stanislas Wawrinka",  
+       "David Ferrer","Roger Federer",  
+       "Andy Murray","Tomas Berdych",  
+       "Juan Martin Del Potro"};  
+```
+
 
 
