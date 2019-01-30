@@ -44,7 +44,7 @@ for(String player: players){
 players.forEach(player -> System.out.println(player + "; "))
 
 // 使用函数式来来表达
-players.forEach();
+players.forEach(System.out:: println );
 ```
 
 
