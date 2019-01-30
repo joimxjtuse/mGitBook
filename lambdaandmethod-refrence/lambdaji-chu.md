@@ -84,3 +84,17 @@ Runnable runnable2 = () -> System.out.println("Hello world !");
 
 Java中，Comparator用来对集合进行排序。下面的例子中是一串玩家的名字列表，我们基于玩家的名，姓，名字长度以及最后一个字母来排序。
 
+```
+String[] players = {"Rafael Nadal", "Novak Djokovic",   
+    "Stanislas Wawrinka", "David Ferrer",  
+    "Roger Federer", "Andy Murray",  
+    "Tomas Berdych", "Juan Martin Del Potro",  
+    "Richard Gasquet", "John Isner"};  
+```
+
+
+
+
+
+
+
