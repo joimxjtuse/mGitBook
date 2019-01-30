@@ -32,7 +32,8 @@ String[] atp = {"Rafael Nadal", "Novak Djokovic",
        "Stanislas Wawrinka",  
        "David Ferrer","Roger Federer",  
        "Andy Murray","Tomas Berdych",  
-       "Juan Martin Del Potro"};  
+       "Juan Martin Del Potro"};
+List<String> players =  Arrays.asList(atp);
 ```
 
 
