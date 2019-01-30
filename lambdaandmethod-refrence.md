@@ -53,7 +53,21 @@ players.forEach(System.out:: println );
 
 从上面的代码可以看到，Lambda表达式可以将我们的遍历代码缩减为一行。
 
-1. 匿名类
+  2. 匿名类
+
+当使用Runnable来执行一个线程时。
+
+```
+//jdk8 之前
+Runnable runnable = new Runnable(){
+        
+        @Override
+        public void run(){ 
+                System.out.println("Hello world !");
+        }
+};
+Thread thread = new Thread("t1");
+```
 
 
 
