@@ -114,5 +114,5 @@ Arrays.sort(players,(String s1, String s2) -> s1.compareTo(s2));
 
 * 将Lambda与Stream结合使用
 
-Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多种操作，例如map, filter, limit, sorted, count, min, max, sum, collect等等。同时，Stream使用了懒计算，它并不会访问集合中的所有数据
+Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多种操作，例如map, filter, limit, sorted, count, min, max, sum, collect等等。同时，Stream使用了懒计算，它并不会访问集合中的所有数据，当遇到getFirst\(\)这样的方法后会结束链式语法。
 
