@@ -80,5 +80,7 @@ new Thread(() -> System.out.println("Hello world !")).start();
 Runnable runnable2 = () -> System.out.println("Hello world !");
 ```
 
-3. 
+* 使用Lambda对集合进行排序
+
+
 
