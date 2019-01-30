@@ -77,7 +77,7 @@ Runnable runnable1 = new Runnable(){
 //使用Labmda表达式
 new Thread(() -> System.out.println("Hello world !")).start();
 
-Runnable runnable2 = () -> System.out.println("Hello world !")
+Runnable runnable2 = () -> System.out.println("Hello world !");
 ```
 
 
