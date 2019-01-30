@@ -93,8 +93,9 @@ String[] players = {"Rafael Nadal", "Novak Djokovic",
 ```
 
 ```
-根据玩家的名字来排序。
-使用匿名内部类：
+根据玩家的名字来排序
+
+//使用匿名内部类：
 Arrays.sort(players,
     new Comparator<String>(){
         @Override
@@ -102,8 +103,9 @@ Arrays.sort(players,
             return (s1.compareTo(s2));  
         }  
     }
-
 );
+//Lambda：
+Arrays.sort(players,(s1, s2) -> s1.compareTo(s2));
 ```
 
 
