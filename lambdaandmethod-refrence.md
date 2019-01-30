@@ -25,7 +25,7 @@ x -> 2 * x
 
 * **基本Lambda表达式举例**
 
-让我们通过一些基本的例子来了解下Lambda表达式是怎么影响我们的日常编码的
+让我们通过一些基本的例子来了解下Lambda表达式是怎么影响我们的日常编码的。
 
 1. 遍历操作
 
@@ -51,7 +51,7 @@ players.forEach(player -> System.out.println(player + "; "))
 players.forEach(System.out:: println );
 ```
 
-从上面的代码可以看到，Lambda表达式可以将我们的遍历代码缩减为一行。
+从上面的代码可以看到，Lambda表达式可以将我们的遍历代码缩减为一行。2. 
 
 2. 匿名类
 
