@@ -82,5 +82,5 @@ Runnable runnable2 = () -> System.out.println("Hello world !");
 
 * 使用Lambda对集合进行排序
 
-Java中，Comparator用来对集合进行排序。下面的例子中是一串玩家的名字列表，我们基于名，姓，名字长度来排序
+Java中，Comparator用来对集合进行排序。下面的例子中是一串玩家的名字列表，我们基于玩家的名，姓，名字长度以及最后一个字母来排序
 
