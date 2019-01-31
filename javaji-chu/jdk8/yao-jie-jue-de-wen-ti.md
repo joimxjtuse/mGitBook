@@ -38,6 +38,8 @@ button.addActionListener(new ActionListener() {
 
 2 匿名类中的字段和this可能会引起混淆；
 
+3 类型载入和实例常见语义不灵活；
+
 
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
