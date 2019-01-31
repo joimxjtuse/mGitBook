@@ -50,6 +50,8 @@ button.addActionListener(new ActionListener() {
 * 通过提供更加灵活而且便于优化的表达式语义，Java SE 8 绕开了问题 
 * 通过允许编译器推断变量的“常量性”（finality），Java SE 8 减轻了问题 4 带来的困扰
 
+不过，Java SE 8 的目标并非解决所有上述问题。因此捕获可变变量（问题 4）和非局部控制流（问题 5）并不在 Java SE 8的范畴之内。
+
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html)
