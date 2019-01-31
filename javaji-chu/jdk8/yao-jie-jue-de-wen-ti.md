@@ -7,3 +7,9 @@ Java 8 中的 lambda 为什么要设计成这样？（为什么要一个 lambda 
 
 
 
+
+
+1. 为什么引入Lambda？
+
+
+
