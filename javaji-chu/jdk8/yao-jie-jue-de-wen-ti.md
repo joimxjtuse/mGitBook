@@ -40,7 +40,7 @@ button.addActionListener(new ActionListener() {
 
 3 类型载入和实例常见语义不灵活；
 
-
+4 无法使用非final修饰的局部变量；
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
