@@ -116,3 +116,9 @@ Arrays.sort(players,(String s1, String s2) -> s1.compareTo(s2));
 
 Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多种操作，例如map, filter, limit, sorted, count, min, max, sum, collect等等。同时，Stream使用了懒计算，它并不会访问集合中的所有数据，当遇到getFirst\(\)这样的方法后会结束链式语法。
 
+参考: [https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/Base2.java](https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/Base2.java)
+
+总结一下，我们首先介绍了Lambda表达式的基本语法以及一些基本例子（迭代，匿名类）；随后结合Stream，介绍了带有Stream的Lambda，包括forEach, filter, limit, min, max, sort, map等。dai
+
+代码详情：https://github.com/joimxjtuse/FuncTest/tree/master/src/cn/joim/jdk8/lambda
+
