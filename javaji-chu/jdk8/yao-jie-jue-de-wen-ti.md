@@ -10,7 +10,7 @@
 
 **Lambda语言的背景**
 
-无论是面向对象语言还是函数式语言中，都是可以动态的封装程序的行为：面向对象语言提供了带有方法的对象
+无论是面向对象语言还是函数式语言中，都是可以动态的封装程序的行为：面向对象语言提供了带有方法的对象，而函数式采用函数
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
