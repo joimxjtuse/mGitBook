@@ -44,7 +44,7 @@ button.addActionListener(new ActionListener() {
 
 5 无法对控制流进行抽象。
 
-这些问题，在Jdk8中均得一解决。
+这些问题，在Jdk8中大部分都解决了。
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
