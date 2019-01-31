@@ -44,7 +44,11 @@ button.addActionListener(new ActionListener() {
 
 5 无法对控制流进行抽象。
 
-这些问题，在Jdk8中大部分都解决了。
+这些问题，在Jdk8中大部分都解决了：
+
+* 通过提供更简洁的语法和局部作用域规则，Java SE 8 彻底解决了问题 1 和问题 2；
+* 通过提供更加灵活而且便于优化的表达式语义，Java SE 8 绕开了问题 
+* 通过允许编译器推断变量的“常量性”（finality），Java SE 8 减轻了问题 4 带来的困扰
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
