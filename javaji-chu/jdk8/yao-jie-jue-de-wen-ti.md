@@ -10,6 +10,16 @@
 
 
 
+http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html
+
+http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html
+
+http://cr.openjdk.java.net/~briangoetz/lambda/lambda-translation.html
+
+
+
+
+
 Java 8 中的 lambda 为什么要设计成这样？（为什么要一个 lambda 对应一个接口？而不是 Structural Typing？）
 
 * lambda 和匿名类型的关系是什么？lambda 是匿名对象的语法糖吗？
