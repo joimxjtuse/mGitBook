@@ -42,6 +42,8 @@ button.addActionListener(new ActionListener() {
 
 4 无法使用非final修饰的局部变量；
 
+5 无法对控制流进行抽象。
+
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html)
