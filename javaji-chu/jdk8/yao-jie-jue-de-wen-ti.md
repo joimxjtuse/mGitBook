@@ -52,6 +52,8 @@ button.addActionListener(new ActionListener() {
 
 不过，Java SE 8 的目标并非解决所有上述问题。因此捕获可变变量（问题 4）和非局部控制流（问题 5）并不在 Java SE 8的范畴之内。
 
+
+
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html)
