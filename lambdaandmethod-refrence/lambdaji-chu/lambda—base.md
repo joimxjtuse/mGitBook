@@ -118,3 +118,5 @@ Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多�
 
 参考: [https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/Base2.java](https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/Base2.java)
 
+总结一下，我们首先介绍了Lambda表达式的基本语法以及一些基本例子。
+
