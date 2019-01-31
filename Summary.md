@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Lambda&Method Refrence](lambdaandmethod-refrence.md)
-  * [Lambda基础](lambdaandmethod-refrence/lambdaji-chu/)
-* [列车垃圾回收算法思想整理](lie-che-la-ji-hui-shou-suan-fa-si-xiang-zheng-li.md)
+* [Java基础](javaji-chu.md)
+  * [jdk8](javaji-chu/jdk8.md)
+    * [Lambda&Method Refrence](javaji-chu/jdk8/lambdaandmethod-refrence.md)
 
