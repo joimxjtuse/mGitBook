@@ -1,4 +1,4 @@
-1 Lambda所提供的新语言特性。
+**Lambda所提供的新语言特性**
 
 1）Lambda表达式；
 
@@ -8,9 +8,9 @@
 
 4）接口中的默认和静态方法。
 
+**Lambda语言的背景**
 
-
-
+无论是面向对象语言还是函数式语言中，都是可以动态的封装程序的行为：面向对象语言提供了带有方法的对象
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
@@ -24,7 +24,6 @@ Java 8 中的 lambda 为什么要设计成这样？（为什么要一个 lambda 
 * Java 8 是如何对 lambda 进行类型推导的？它的类型推导做到了什么程度？
 * Java 8 为什么要引入默认方法？
 * Java 编译器如何处理 lambda？
-* **Lambda语言的背景**
+* 
 
-无论是面向对象语言还是函数式语言中，都是可以动态的封装程序的行为：面向对象语言提供了带有方法的对象
 
