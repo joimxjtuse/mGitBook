@@ -10,7 +10,19 @@
 
 **Lambda语言的背景**
 
-无论是面向对象语言还是函数式语言中，都是可以动态的封装程序的行为：面向对象语言提供了带有方法的对象，而函数式采用函数
+无论是面向对象语言还是函数式语言中，都是可以动态的封装程序的行为：面向对象语言提供了带有方法的对象，而函数式采用函数。这一相似似乎并不明显，因为Java会显得重量级：实例化一个类型可能会涉及到不同的类，并需要初始化它们的属性和方法。
+
+但是，有些java对象仅仅是对一个函数的封装。Java API中定义了一种接口（回调接口），它希望调用者提供一个该接口的实例。例如：
+
+```
+public interface ActionListener{
+    void actionPerformed(ActionEvent event);
+}
+```
+
+
+
+
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
