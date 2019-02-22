@@ -163,8 +163,8 @@ java.util.Function包中，提供了43个接口。这其中，包含6个基本�
 | BinaryOperator &lt;T&gt; | T apply\(T t1, T t2\) | BigInteger :: add |
 | Predicate &lt;T&gt; | boolean test\(T t\) | Collection :: isEmpty |
 | Function&lt;T, R&gt; | R apply\(T t\) | Arrays :: asList |
-|  |  |  |
-|  |  |  |
+| Supplier&lt;T&gt; | T get\(\) | Instant :: now |
+| Consumer&lt;T&gt; | void accept\(T t\) | System.out::println |
 
 Java系统所提供的函数式接口结构简介：
 
