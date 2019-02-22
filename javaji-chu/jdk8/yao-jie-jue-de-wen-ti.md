@@ -55,6 +55,10 @@ button.addActionListener(new ActionListener() {
 
 上面提到的ActionListener接口只有一个方法（Runnable, Comparator等回调接口，都有这样的特征），我们将只有一个方法的接口成为函数式接口。
 
+
+
+参考资料：
+
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html)
