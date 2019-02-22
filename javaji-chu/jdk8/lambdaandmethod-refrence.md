@@ -138,9 +138,13 @@ Java系统所提供的函数式接口结构简介：
 
 ```
 // 1. 静态方法引用
+   Person :: compareByName
 // 2. 特定实例的方法引用
+   person :: getAge 
 // 3. 任意对象（属于同一个类）的实例方法引用
+   Person :: getAge
 // 4. 构造方法引用
+   Person :: new
 ```
 
 
