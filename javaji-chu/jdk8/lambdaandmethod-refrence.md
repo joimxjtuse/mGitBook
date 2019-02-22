@@ -145,9 +145,9 @@ Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多�
 
 2. 除非这个类有一个抽象方法，否则这个接口不会编译；
 
-3. 它阻止维护人员在该接口内增加抽象方法。
+3. 阻止维护人员在该接口内增加抽象方法。
 
-java.util.Function包中，提供了43个接口。这其中，包含6个基本的接口。
+java.util.Function包中，提供了**43**个接口。这其中，包含6个基本的接口。
 
 操作者（**Operator**）接口代表一系列结果和参数类型相同的函数；
 
@@ -168,5 +168,23 @@ java.util.Function包中，提供了43个接口。这其中，包含6个基本�
 
 自定义函数式 接口：
 
-[https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/GreetingService.java](https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/GreetingService.java)
+```
+@FunctionalInterface
+public interface GreetingService {
+
+    void greeting(String message);
+}
+
+public static void main(String[] args) {
+
+        GreetingService serviceWithlambda = message -> {
+            System.out.println(message);
+        };
+
+        GreetingService serviceWithMethodRefrence = System.out::println;
+}
+
+```
+
+
 
