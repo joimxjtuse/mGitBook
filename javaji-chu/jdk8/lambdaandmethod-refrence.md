@@ -62,7 +62,7 @@ for(String player: players){
 //使用Lambda表达式来操作.
 players.forEach(player -> System.out.println(player + "; "))
 
-// 使用函数式来来表达
+// 使用方法引用来来表达
 players.forEach(System.out:: println );
 ```
 
