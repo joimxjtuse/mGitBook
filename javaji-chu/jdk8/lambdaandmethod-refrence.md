@@ -1,4 +1,4 @@
-**Lambda 表达式基础语法**
+一 **Lambda 表达式基础语法**
 
 ```
 (parameters) -> expression  or  (parameters) -> {statements;}
@@ -23,11 +23,11 @@ x -> 2 * x
 (String s) -> System.out.print(s)
 ```
 
-* **基本Lambda表达式举例**
+二 **基本Lambda表达式举例**
 
 让我们通过一些基本的例子来了解下Lambda表达式是怎么影响我们的日常编码的。
 
-1. 遍历操作
+**1 遍历操作**
 
 假设有一个玩家列表，为了遍历这个列表，在JDK8之前，我们可能使用for-each循环来实现.
 
@@ -53,7 +53,7 @@ players.forEach(System.out:: println );
 
 从上面的代码可以看到，Lambda表达式可以将我们的遍历代码缩减为一行。
 
-1. 匿名类
+**2 匿名类**
 
 当使用Runnable来执行一个线程时。
 
@@ -77,10 +77,10 @@ Runnable runnable1 = new Runnable(){
 //使用Labmda表达式
 new Thread(() -> System.out.println("Hello world !")).start();
 
-Runnable runnable2 = () -> System.out.println("Hello world !");
+Runnable runnable2 = () -> System.out.println("Hello world !");3
 ```
 
-* 使用Lambda对集合进行排序
+**3 使用Lambda对集合进行排序**
 
 Java中，Comparator用来对集合进行排序。下面的例子中是一串玩家的名字列表，我们基于玩家的名，姓，名字长度以及最后一个字母来排序。
 
@@ -112,13 +112,23 @@ Arrays.sort(players, c);
 Arrays.sort(players,(String s1, String s2) -> s1.compareTo(s2));
 ```
 
-* 将Lambda与Stream结合使用
+**4 将Lambda与Stream结合使用**
 
-Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多种操作，例如map, filter, limit, sorted, count, min, max, sum, collect等等。同时，Stream使用了懒计算，它并不会访问集合中的所有数据，当遇到getFirst\(\)这样的方法后会结束链式语法。
+Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多种操作，例如**map, filter, limit, sorted, count, min, max, sum, collect**等等。同时，Stream使用了懒计算，它并不会访问集合中的所有数据，当遇到getFirst\(\)这样的方法后会结束链式语法。
 
 参考: [https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/Base2.java](https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/Base2.java)
 
 总结一下，我们首先介绍了Lambda表达式的基本语法以及一些基本例子（迭代，匿名类）；随后结合Stream，介绍了带有Stream的Lambda，包括forEach, filter, limit, min, max, sort, map等。dai
 
 代码详情：[https://github.com/joimxjtuse/FuncTest/tree/master/src/cn/joim/jdk8/lambda](https://github.com/joimxjtuse/FuncTest/tree/master/src/cn/joim/jdk8/lambda)
+
+**三 系统函数式接口和自定义函数式接口**
+
+Java系统所提供的函数式接口结构简介：
+
+[http://note.youdao.com/noteshare?id=f9d5d5d59adb26b8a50183aeea0dab19](http://note.youdao.com/noteshare?id=f9d5d5d59adb26b8a50183aeea0dab19)
+
+自定义函数式 接口：
+
+https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/GreetingService.java
 
