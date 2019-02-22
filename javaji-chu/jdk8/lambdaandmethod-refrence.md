@@ -38,8 +38,6 @@ x -> 2 * x
    Person :: new
 ```
 
-
-
 二 **基本Lambda表达式举例**
 
 让我们通过一些基本的例子来了解下Lambda表达式是怎么影响我们的日常编码的。
@@ -139,7 +137,26 @@ Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多�
 
 代码详情：[https://github.com/joimxjtuse/FuncTest/tree/master/src/cn/joim/jdk8/lambda](https://github.com/joimxjtuse/FuncTest/tree/master/src/cn/joim/jdk8/lambda)
 
-**三 系统函数式接口和自定义函数式接口**
+**三 FunctionalInterface注解与Lambda**
+
+关于@FunctionalInterface注解：
+
+1. 它告诉读者这个类接口支持lambdas；
+
+2. 除非这个类有一个抽象方法，否则这个接口不会编译；
+
+3. 它阻止维护人员在该接口内增加抽象方法。
+
+java.util.Function包中，提供了43个接口。这其中，包含6个基本的接口。
+
+操作者（Operator）接口代表一系列结果和参数类型相同的函数；
+
+谓词\(Predicate\)接口代表一个接受一个参数并返回布尔值的函数；
+
+方法（Function）接口代表一个输入和输出类型不一致的函数；
+
+供应商（Supplier）接口代表一个函数没有参数，返回一个值；同时，消费者（Consumer）接口代表一个函数有一个参数没有返回值。  
+
 
 Java系统所提供的函数式接口结构简介：
 
