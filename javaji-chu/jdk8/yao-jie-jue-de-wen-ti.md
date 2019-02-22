@@ -53,9 +53,7 @@ button.addActionListener(new ActionListener() {
 
 2.2 **函数式 接口**
 
-上面提到的ActionListener接口只有一个方法（Runnable, Comparator等回调接口，都有这样的特征），我们将只有一个方法的接口成为函数式接口。
-
-
+上面提到的ActionListener接口只有一个方法（Runnable, Comparator等回调接口，都有这样的特征），我们将只有一个方法的接口称为函数式接口。
 
 参考资料：
 
