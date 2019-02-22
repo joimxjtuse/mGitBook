@@ -21,6 +21,8 @@ x -> 2 * x
 
 // 5. 接收一个String对象，并在控制台打印 ，无返回值.
 (String s) -> System.out.print(s)
+// 6. 方法引用
+
 ```
 
 二 **基本Lambda表达式举例**
@@ -130,5 +132,5 @@ Java系统所提供的函数式接口结构简介：
 
 自定义函数式 接口：
 
-https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/GreetingService.java
+[https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/GreetingService.java](https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/GreetingService.java)
 
