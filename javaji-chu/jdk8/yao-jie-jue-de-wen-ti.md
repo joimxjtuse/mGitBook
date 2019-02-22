@@ -53,8 +53,6 @@ button.addActionListener(new ActionListener() {
 
 **函数式 接口**
 
-
-
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-libraries-final.html)
