@@ -21,8 +21,6 @@ x -> 2 * x
 
 // 5. 接收一个String对象，并在控制台打印 ，无返回值.
 (String s) -> System.out.print(s)
-// 6. 方法引用
-
 ```
 
 二 **基本Lambda表达式举例**
