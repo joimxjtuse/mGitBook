@@ -51,7 +51,7 @@ button.addActionListener(new ActionListener() {
 
 不过，Java SE 8 的目标并非解决所有上述问题。因此非final修饰的局部变量（问题 4）和非局部控制流（问题 5）并不在 Java SE 8的范畴之内。
 
-2.2 **函数式 接口**
+2.2 **函数式接口**
 
 上面提到的ActionListener接口只有一个方法（Runnable, Comparator等回调接口，都有这样的特征），我们将只有一个方法的接口称为函数式接口。
 
