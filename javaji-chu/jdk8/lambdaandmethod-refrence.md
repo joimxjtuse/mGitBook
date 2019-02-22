@@ -1,4 +1,4 @@
-一 **Lambda 表达式基础语法**
+一  **Lambda 表达式基础语法**
 
 ```
 (parameters) -> expression  or  (parameters) -> {statements;}
@@ -23,7 +23,7 @@ x -> 2 * x
 (String s) -> System.out.print(s)
 ```
 
-** 方法引用及语法**
+二 **方法引用及语法**
 
 有时候，Lambda表达式可能仅仅调用一个已存在的方法，而不做任何其它事，对于这种情况，通过一个方法名字来引用这个已存在的方法会更加清晰，Java 8的方法引用允许我们这样做。方法引用是一个更加紧凑，易读的Lambda表达式，方法引用是一个Lambda表达式，其中方法引用的操作符是双冒号"::"。
 
@@ -38,7 +38,7 @@ x -> 2 * x
    Person :: new
 ```
 
-二 **基本Lambda表达式举例**
+三 **基本Lambda表达式举例**
 
 让我们通过一些基本的例子来了解下Lambda表达式是怎么影响我们的日常编码的。
 
@@ -183,7 +183,6 @@ public static void main(String[] args) {
 
         GreetingService serviceWithMethodRefrence = System.out::println;
 }
-
 ```
 
 
