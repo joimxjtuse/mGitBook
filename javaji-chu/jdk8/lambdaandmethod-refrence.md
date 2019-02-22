@@ -132,7 +132,16 @@ Java系统所提供的函数式接口结构简介：
 
 [https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/GreetingService.java](https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/GreetingService.java)
 
-**附： 方法引用**
+**附： 方法引用及语法**
 
-有时候，Lambda表达式可能仅仅调用一个已存在的方法，而不做任何其它事，对于这种情况，通过一个方法名字来引用这个已存在的方法会更加清晰，Java 8的方法引用允许我们这样做。方法引用是一个更加紧凑，易读的Lambda表达式，注意方法引用是一个Lambda表达式，其中方法引用的操作符是双冒号"::"。
+有时候，Lambda表达式可能仅仅调用一个已存在的方法，而不做任何其它事，对于这种情况，通过一个方法名字来引用这个已存在的方法会更加清晰，Java 8的方法引用允许我们这样做。方法引用是一个更加紧凑，易读的Lambda表达式，方法引用是一个Lambda表达式，其中方法引用的操作符是双冒号"::"。
+
+```
+// 1. 静态方法引用
+// 2. 特定实例的方法引用
+// 3. 任意对象（属于同一个类）的实例方法引用
+// 4. 构造方法引用
+```
+
+
 
