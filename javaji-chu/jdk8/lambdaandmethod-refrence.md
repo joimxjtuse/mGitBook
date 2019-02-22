@@ -141,7 +141,7 @@ Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多�
 
 关于@FunctionalInterface注解：
 
-1. 它告诉读者这个类接口支持lambdas；
+1. FunctionalInterface告诉读者这个类接口支持Lambda；
 
 2. 除非这个类有一个抽象方法，否则这个接口不会编译；
 
@@ -165,10 +165,6 @@ java.util.Function包中，提供了43个接口。这其中，包含6个基本�
 | Function&lt;T, R&gt; | R apply\(T t\) | Arrays :: asList |
 | Supplier&lt;T&gt; | T get\(\) | Instant :: now |
 | Consumer&lt;T&gt; | void accept\(T t\) | System.out::println |
-
-Java系统所提供的函数式接口结构简介：
-
-[http://note.youdao.com/noteshare?id=f9d5d5d59adb26b8a50183aeea0dab19](http://note.youdao.com/noteshare?id=f9d5d5d59adb26b8a50183aeea0dab19)
 
 自定义函数式 接口：
 
