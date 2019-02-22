@@ -129,7 +129,7 @@ Arrays.sort(players,(String s1, String s2) -> s1.compareTo(s2));
 
 **4 将Lambda与Stream结合使用**
 
-Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多种操作，例如**map, filter, limit, sorted, count, min, max, sum, collect**等等。同时，Stream使用了懒计算，它并不会访问集合中的所有数据，当遇到getFirst\(\)这样的方法后会结束链式语法。
+Stream 是对集合的封装，通常与Lambda一起使用。它们支持许多种操作，例如**map, filter, limit, sorted, count, min, max, sum, collect**等等。同时，Stream使用了懒计算，它并不会访问集合中的所有数据，当遇到getFirst\(\)这样的方法后会结束链式语法。Stream提供了并行流，可以大大提高计算速度。
 
 参考: [https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/Base2.java](https://github.com/joimxjtuse/FuncTest/blob/master/src/cn/joim/jdk8/lambda/Base2.java)
 
@@ -197,7 +197,5 @@ public static void main(String[] args) {
 
 参考文章：
 
-https://www.developer.com/java/start-using-java-lambda-expressions.html
-
-
+[https://www.developer.com/java/start-using-java-lambda-expressions.html](https://www.developer.com/java/start-using-java-lambda-expressions.html)
 
