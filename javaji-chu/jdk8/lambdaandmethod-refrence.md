@@ -158,10 +158,10 @@ java.util.Function包中，提供了43个接口。这其中，包含6个基本�
 供应商（**Supplier**）接口代表一个函数没有参数，返回一个值；同时，消费者（**Consumer**）接口代表一个函数有一个参数没有返回值。
 
 | 接口 | 方法名 | 举例 |
-| :--- | :--- | :--- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| :---: | :---: | :---: |
+| UnaryOperator &lt;T&gt; | T apply\(T t\) | String :: toLowerCase |
+| BinaryOperator &lt;T&gt; | T apply\(T t1, T t2\) | BigInteger :: add |
+| Predicate &lt;T&gt; | boolean test\(T t\) | Collection :: isEmpty |
 |  |  |  |
 |  |  |  |
 |  |  |  |
