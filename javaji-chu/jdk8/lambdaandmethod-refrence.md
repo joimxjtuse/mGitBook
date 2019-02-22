@@ -166,7 +166,7 @@ java.util.Function包中，提供了**43**个接口。这其中，包含6个基�
 | Supplier&lt;T&gt; | T get\(\) | Instant :: now |
 | Consumer&lt;T&gt; | void accept\(T t\) | System.out::println |
 
-自定义函数式接口：
+自定义函数式接口（关于函数式的概念后面会提到）：
 
 ```
 @FunctionalInterface
