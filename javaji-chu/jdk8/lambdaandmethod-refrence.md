@@ -162,7 +162,7 @@ java.util.Function包中，提供了43个接口。这其中，包含6个基本�
 | UnaryOperator &lt;T&gt; | T apply\(T t\) | String :: toLowerCase |
 | BinaryOperator &lt;T&gt; | T apply\(T t1, T t2\) | BigInteger :: add |
 | Predicate &lt;T&gt; | boolean test\(T t\) | Collection :: isEmpty |
-|  |  |  |
+| Function&lt;T, R&gt; | R apply\(T t\) | Arrays :: asList |
 |  |  |  |
 |  |  |  |
 
