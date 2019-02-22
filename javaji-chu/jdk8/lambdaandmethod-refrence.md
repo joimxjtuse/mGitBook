@@ -185,7 +185,7 @@ public static void main(String[] args) {
 }
 ```
 
-几条与Lambda表达式有关的有效编码建议：
+**四 Lambda表达式有关的高效编码建议**
 
 1. 采用Lambda表达式来替换匿名内部类方式；
 2. 尽量使用系统提供的标准函数式接口；
