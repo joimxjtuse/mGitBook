@@ -82,7 +82,7 @@ II：实现函数式的另一种方式是引入一个全新的结构化函数类
 
 * [`java.beans.PropertyChangeListener`](http://www.fxfrog.com/docs_www/api/java/beans/PropertyChangeListener.html)
 
-此外，Java8新增了java.util.funtion包，包含了常用的函数式接口。
+此外，Java8新增了java.util.funtion包，包含了常用的函数式接口（即上一节提到的43个函数式接口）。
 
 参考资料：
 
