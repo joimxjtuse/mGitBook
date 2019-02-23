@@ -189,6 +189,14 @@ public static void main(String[] args) {
 2. 尽量使用系统提供的标准函数式接口；
 3. 方法引用通常会比lambda更简洁。当方法引用代码更加少并整洁时，使用方法引用，否则，请使用lambda。
 
+通常情况下，方法引用会比Lambda更简洁，但是也有特殊。当调用者与调用的方法在同一个类内，使用Lambda会比方法引用更简洁。
+
+```
+service.execute(GreetingServiceImpl::action);
+
+service.execute(() ->action());
+```
+
 总结一下，我们首先介绍了Lambda表达式的基本语法以及一些基本例子（迭代，匿名类）；随后结合Stream，介绍了带有Stream的Lambda，包括forEach, filter, limit, min, max, sort, map等；继而提到了java库中提供的支持Lambda表达式的一些基础类；最后，介绍了Lambda表达式在实践中的几条建议。第四节中提到了函数式，虽然我们通篇在讲述的都在函数式里，但是对这些概念还没有讲清楚，下一节会从函数式等概念来讨论Lambda表达式是怎么引入到jdk中的。
 
 * Java 8 中的 lambda 为什么要设计成这样？
@@ -201,5 +209,5 @@ public static void main(String[] args) {
 
 代码地址：
 
-https://github.com/joimxjtuse/FuncTest.git
+[https://github.com/joimxjtuse/FuncTest.git](https://github.com/joimxjtuse/FuncTest.git)
 
