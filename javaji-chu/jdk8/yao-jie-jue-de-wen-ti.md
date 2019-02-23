@@ -61,14 +61,14 @@ I：不需要额外的工作来声明一个接口时函数式接口，编译器�
 
 II：实现函数式的另一种方式是引入一个全新的结构化函数类型，即箭头类型。一个输入String和Object并返回int的函数类型可以表示为**（String, Object）-&gt; int**。这一方案最终被抛弃，因为以下的原因：
 
-1. 它将增加类型系统的复杂性，并带来结构类型（Structural Type）和名义类型\(Nominal Type， [https://en.wikipedia.org/wiki/Nominal\_type\_syste](https://en.wikipedia.org/wiki/Nominal_type_system；Java几乎完全使用这一类型%29。) 。Java几乎完全使用这一类型\)。
+1.它将增加类型系统的复杂性，并带来结构类型（Structural Type）和名义类型\(Nominal Type， [https://en.wikipedia.org/wiki/Nominal\_type\_syste](https://en.wikipedia.org/wiki/Nominal_type_system；Java几乎完全使用这一类型%29。) 。Java几乎完全使用这一类型\)；
 
 2.这将导致库风格的分歧—— 一些库将继续使用回调接口，而另一些库将使用结构函数类型；  
 3.它的语法可能会变得很笨拙，尤其在包含检查过的异常（checked exception）之后。
 
-4.每个不同的函数类型不太可能有一个运行时表示，这意味着开发人员将进一步暴露于擦除并受到限制。例如，重载方法m\(T-&gt;U\)和m\(X-&gt;Y\)是不可能的\(这可能令人惊讶\)。
+4.每一个函数类型都不能回再有运行时表示，者意味着开发者会面临类型擦除的困扰和局限。例如，重载方法m\(T-&gt;U\)和m\(X-&gt;Y\)是不可能的\(这可能令人惊讶\)。
 
-因此，我们采用了“使用您所知道的”的方法——因为现有的库广泛地使用功能接口，所以我们对这种模式进行了编码和利用。这使得现有的库可以与lambda表达式一起使用。  
+因此，在设计函数式时采用了“使用已知类型”的思路。因为现有的库就包含大量函数式接口。这一设计方案，大量现有的库直接就能使用Lambda表达式。  
 为了说明这一点，下面是Java SE 7中已经存在的一些功能接口的示例，它们非常适合与新的语言特性一起使用;下面的例子说明了其中几个的用法
 
 * [`java.lang.Runnable`](http://download.oracle.com/javase/7/docs/api/java/lang/Runnable.html)
