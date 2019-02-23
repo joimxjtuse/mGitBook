@@ -61,7 +61,7 @@ I：不需要额外的工作来声明一个接口时函数式接口，编译器�
 
 II：实现函数式的另一种方式是引入一个全新的结构化函数类型，即箭头类型。一个输入String和Object并返回int的函数类型可以表示为**（String, Object）-&gt; int**。这一方案最终被抛弃，因为以下的原因：
 
-\_** **\_1. 它将增加类型系统的复杂性，并带来结构类型（Structural Type）和名义类型\(Nominal Type， [https://en.wikipedia.org/wiki/Nominal\_type\_system。Java几乎完全使用这一类型\)。](https://en.wikipedia.org/wiki/Nominal_type_system；Java几乎完全使用这一类型%29。)
+\_** **\_1. 它将增加类型系统的复杂性，并带来结构类型（Structural Type）和名义类型\(Nominal Type， [https://en.wikipedia.org/wiki/Nominal\_type\_syste](https://en.wikipedia.org/wiki/Nominal_type_system；Java几乎完全使用这一类型%29。) 。Java几乎完全使用这一类型\)。
 
 2.这将导致库风格的差异——一些库将继续使用回调接口，而另一些库将使用结构函数类型。  
  3.语法可能很笨拙，特别是在包含检查过的异常时。
@@ -80,6 +80,7 @@ II：实现函数式的另一种方式是引入一个全新的结构化函数类
 * [`java.util.Comparator`](http://download.oracle.com/javase/7/docs/api/java/util/Comparator.html)
 
 * [`java.io.FileFilter`](http://download.oracle.com/javase/7/docs/api/java/io/FileFilter.html)
+
 * [`java.beans.PropertyChangeListener`](http://www.fxfrog.com/docs_www/api/java/beans/PropertyChangeListener.html)
 
 参考资料：
