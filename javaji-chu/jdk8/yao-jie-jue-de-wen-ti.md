@@ -59,7 +59,31 @@ button.addActionListener(new ActionListener() {
 
 I：不需要额外的工作来声明一个接口时函数式接口，编译器会根据接口的结构来自行判断（这一判断过程并不仅仅是方法个数的验证，一个接口可能定义了Object已经定义的方法，比如toString,或者定义了静态方法，默认方法，这些都违背了函数式接口方法的概念）。此外，API作者可以使用@FunctionalInteraface注解来指定一个接口为函数式接口，加上该注解后编译器会验证该接口是否满足函数式接口的要求。
 
-II：实现函数式的另一种方式是引入一个全新的结构化函数类型，即箭头类型。一个输入String和Object并返回int的函数类型可以表示为（String, Object）-&gt; int。
+II：实现函数式的另一种方式是引入一个全新的结构化函数类型，即箭头类型。一个输入String和Object并返回int的函数类型可以表示为**（String, Object）-&gt; int**。这一方案最终被抛弃，因为以下的原因：
+
+_** 1. 它将增加类型系统的复杂性，并进一步混合结构类型和名义类型\(Java几乎完全是名义类型\)。**_
+
+ 2.这将导致库风格的差异——一些库将继续使用回调接口，而另一些库将使用结构函数类型。  
+ 3.语法可能很笨拙，特别是在包含检查过的异常时。
+
+ 4.每个不同的函数类型不太可能有一个运行时表示，这意味着开发人员将进一步暴露于擦除并受到限制。例如，重载方法m\(T-&gt;U\)和m\(X-&gt;Y\)是不可能的\(这可能令人惊讶\)。
+
+因此，我们采用了“使用您所知道的”的方法——因为现有的库广泛地使用功能接口，所以我们对这种模式进行了编码和利用。这使得现有的库可以与lambda表达式一起使用。  
+为了说明这一点，下面是Java SE 7中已经存在的一些功能接口的示例，它们非常适合与新的语言特性一起使用;下面的例子说明了其中几个的用法
+
+*   [`java.lang.Runnable`](http://download.oracle.com/javase/7/docs/api/java/lang/Runnable.html)
+
+* [`java.util.concurrent.Callable`](http://download.oracle.com/javase/7/docs/api/java/util/concurrent/Callable.html)
+* [`java.security.PrivilegedAction`](http://download.oracle.com/javase/7/docs/api/java/security/PrivilegedAction.html)
+* [`java.util.Comparator`](http://download.oracle.com/javase/7/docs/api/java/util/Comparator.html)
+* [`java.io.FileFilter`](http://download.oracle.com/javase/7/docs/api/java/io/FileFilter.html)
+* [`java.beans.PropertyChangeListener`](http://www.fxfrog.com/docs_www/api/java/beans/PropertyChangeListener.html)
+
+
+
+
+
+
 
 参考资料：
 
