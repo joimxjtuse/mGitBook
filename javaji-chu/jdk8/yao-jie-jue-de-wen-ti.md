@@ -84,6 +84,8 @@ II：实现函数式的另一种方式是引入一个全新的结构化函数类
 
 此外，Java8新增了java.util.funtion包，包含了常用的函数式接口（即上一节提到的43个函数式接口）。
 
+
+
 参考资料：
 
 [http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-final.html)
