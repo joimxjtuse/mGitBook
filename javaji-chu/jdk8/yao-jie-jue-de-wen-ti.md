@@ -68,8 +68,7 @@ II：实现函数式的另一种方式是引入一个全新的结构化函数类
 
 4.每一个函数类型都不能回再有运行时表示，者意味着开发者会面临类型擦除的困扰和局限。例如，重载方法m\(T-&gt;U\)和m\(X-&gt;Y\)是不可能的\(这可能令人惊讶\)。
 
-因此，在设计函数式时采用了“使用已知类型”的思路。因为现有的库就包含大量函数式接口。这一设计方案，大量现有的库直接就能使用Lambda表达式。  
-为了说明这一点，下面是Java SE 7中已经存在的一些功能接口的示例，它们非常适合与新的语言特性一起使用;下面的例子说明了其中几个的用法
+因此，在设计函数式时采用了“使用已知类型”的思路，因为现有的库就包含大量函数式接口，大量现有的库直接就能使用Lambda表达式。下面是Java SE 7中已经存在的一些函数式接口的示例，它们非常适合与新的语言特性一起使用;下面的例子说明了其中几个的用法
 
 * [`java.lang.Runnable`](http://download.oracle.com/javase/7/docs/api/java/lang/Runnable.html)
 
@@ -82,6 +81,8 @@ II：实现函数式的另一种方式是引入一个全新的结构化函数类
 * [`java.io.FileFilter`](http://download.oracle.com/javase/7/docs/api/java/io/FileFilter.html)
 
 * [`java.beans.PropertyChangeListener`](http://www.fxfrog.com/docs_www/api/java/beans/PropertyChangeListener.html)
+
+此外，Java8新增了java.util.funtion包，包含了常用的函数式接口。
 
 参考资料：
 
