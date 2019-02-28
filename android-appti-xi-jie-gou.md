@@ -1,2 +1,4 @@
-翻译：https://labs.ribot.co.uk/android-application-architecture-8b6e34acda65
+翻译：[https://labs.ribot.co.uk/android-application-architecture-8b6e34acda65](https://labs.ribot.co.uk/android-application-architecture-8b6e34acda65)
+
+
 
