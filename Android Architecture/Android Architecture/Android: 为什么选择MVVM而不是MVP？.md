@@ -28,9 +28,9 @@ Android自身由MVC结构写成。在这个结构中，Activity基本负责了�
 
 一个简单的MVP结构类似于这样：
 
-![](/assets/002.png)一个简单的MVP结构类似于这样：
+![](/assets/mvp.png)一个简单的MVP结构类似于这样：
 
-![](/assets/003.png)我提出几个问题，当前的MVP面对的，然而使用MVVM却可以避免的。
+![](/assets/mvvm.png)我提出几个问题，当前的MVP面对的，然而使用MVVM却可以避免的。
 
 * ## 紧密的耦合度
 
@@ -53,6 +53,4 @@ Android自身由MVC结构写成。在这个结构中，Activity基本负责了�
 PS：这些是我个人的经验和想法，以及我为什么引入MVVM到我们的项目。我的目的并非比较和找出差异。我所做的所有尝试只是为了分享我对于MVP的经验和缺点，以及被MVVM克服的缺点。
 
 [https://github.com/ankitsharma6466/AndroidKotlinBoilerplate](https://github.com/ankitsharma6466/AndroidKotlinBoilerplate)
-
-
 
