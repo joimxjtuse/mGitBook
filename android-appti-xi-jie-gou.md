@@ -8,13 +8,7 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 # 过去
 
-Back in 2012 our codebases used to follow a basic structure. We didn’t use any networking library and AsyncTasks were still our friends. The diagram below shows approximately how the architecture was.
-
 2012年，我们的代码库主要遵循Android的基本结构。我们没有使用任何网络库，AsyncTasks仍然使我们的朋友。下图展示了当时的架构组织。
 
-
-
-
-
-
+![](/assets/Initial architecture.png)
 
