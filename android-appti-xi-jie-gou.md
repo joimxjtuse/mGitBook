@@ -6,9 +6,3 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 在过去的三年中，我和我的团队（ribot）一直在做Android App的开发。这期间，构建Android App的架构技术一直在不断的发展着。本文通过我们在架构技术的工作和学习过程中的经验、教训和摸索过程来介绍App架构技术的发展过程。
 
-I’ve been making Android apps with the
-
-[ribot team](http://ribot.co.uk/us/)
-
-for over three years. During this time, the architecture and technologies we’ve used to build Android apps have been continuously evolving. This article will take you through this journey by explaining our learnings, mistakes and the reasoning behind these architectural changes.
-
