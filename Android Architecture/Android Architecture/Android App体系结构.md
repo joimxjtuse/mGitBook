@@ -31,7 +31,7 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 两年的时间，我们都在维护上面的结构。这段时间里，我们也做过一些改善措施，来缓解上面提到的几个问题。比如，我们添加了一些Helper类，将一些业务从Activities/Fragments里剥离，在APIProvider内，我们使用Volley。即使有着一系列改变，我们的代码也没有解决测试不友好的问题，而且“嵌套地狱”的问题仍然在发生。
 
-直到2014年接触了RxJava后这一情况才有所缓解。通过在几个示例项目上使用RxJava重构，我们意识到这才是解决“回调地狱”问题的终极解决方案（如果你不熟悉反应式编程，可以阅读这篇文章：https://gist.github.com/staltz/868e7e9bc2a7b8c1f754）。
+直到2014年接触了RxJava后这一情况才有所缓解。通过在几个示例项目上使用RxJava重构，我们意识到这才是解决“回调地狱”问题的终极解决方案（如果你不熟悉反应式编程，可以阅读这篇文章：[https://gist.github.com/staltz/868e7e9bc2a7b8c1f754](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754）。)）。
 
 It wasn’t until 2014 when we started reading about[RxJava](http://reactivex.io/). After trying it on a few sample projects, we realised that this could finally be the solution to the nested callback problem. If you are not familiar with reactive programming you can read[this introduction](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754). In short,RxJava allows you to manage data via asynchronous streams and gives you many[operators](http://reactivex.io/documentation/operators.html)that you can apply to the stream in order to transform, filter or combine the data.
 
@@ -159,6 +159,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                    
+[                      
 ](https://twitter.com/ivacf)
 
