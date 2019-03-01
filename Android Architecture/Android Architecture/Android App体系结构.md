@@ -44,12 +44,6 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 
 
-* PreferencesHelper: reads and saves data in SharedPreferences.
-
-* DatabaseHelper: handles accessing SQLite databases.
-
-* [Retrofit](https://github.com/square/retrofit) services: perform calls to REST APIs. We started using Retrofit instead of Volley because it provides support for RxJava. It’s also nicer to use.
-
 Most of the public methods inside helper classes will return RxJava Observables.
 
 The**DataManager**is the brain of the architecture. It extensively uses RxJava operators to combine, filter and transform data retrieved from helper classes. The aim of the DataManager is to reduce the amount of work that Activities and Fragments have to do by providing data that is ready to display and won’t usually need any transformation.
@@ -162,6 +156,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                    
+[                                      
 ](https://twitter.com/ivacf)
 
