@@ -70,7 +70,7 @@ public Observable<Post> loadTodayPosts() {
 
 View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法并且订阅得到返回值的Observable事件。订阅完成后，Observable发出的不同帖子可以直接添加到适配器，以便在RecyclerView或类似Ui上显示。
 
-该架构的最后一个元素是E**vent Bus**。Event Bus允许我们广播数据层的事件，以便View层中的多个组件可以订阅这些事件。例如，在DataManager中的signOut\(\)方法中可以在Observable完成时发布一event，多个Activities可以订阅这一事件，在注销事件发生后更改UI状态为注销。以便订阅此事件的多个活动可以更改其UI以显示已注销状态。
+该架构的最后一个元素是**Event Bus**。Event Bus允许我们广播数据层的事件，以便View层中的多个组件可以订阅这些事件。例如，在DataManager中的signOut\(\)方法中可以在Observable完成时发布一event，多个Activities可以订阅这一事件，在注销事件发生后更改UI状态为注销。以便订阅此事件的多个活动可以更改其UI以显示已注销状态。
 
 # 为什么这一结构更好?
 
@@ -92,7 +92,15 @@ View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法
 
 在过去的一年中，MVP或MVVM等几种架构模式在Android社区中越来越受欢迎。在对这些模式的示例项目和文章探索之后，我们发现MVP可以为我们现有的方法带来非常有价值的改进。因为我们当前的架构分为两层（View和Data），所以添加MVP感觉很自然。我们只需添加一个新的**Presenter**层，并将部分代码从View层移动到**Presenter**。
 
-![](/assets/MVP-based architecture.png)Data层保持原样，但是现在它称作Model层，zh恶业与MVP模式保持一致。The data layer remains as it was but it’s now called**model**to be more consistent with the name of the pattern.
+![](/assets/MVP-based architecture.png)Data层保持原样，但是现在它称作Model层，zh恶业与MVP模式保持一致。
+
+**Presenter**负责向**Model**请求数据并在获取到结果后调用U的方法。**Presenter**订阅了Datamanager数据返回的Obervable。因此，它必须处理调度程序（[schedulers](http://reactivex.io/documentation/scheduler.html)）和订阅等事件（[subscriptions](http://reactivex.io/RxJava/javadoc/rx/Subscription.html)）。
+
+
+
+演示者负责从模型加载数据，并在结果准备好时在视图中调用正确的方法。他们订阅了数据管理器返回的Observable。因此，他们必须处理调度程序和订阅等事情。此外，如果需要，他们可以分析错误代码或对数据流应用额外的操作。例如，如果我们需要过滤一些数据并且这个过滤器不可能在其他地方重复使用，那么在演示者而不是数据管理器中实现它可能更有意义。
+
+
 
 **Presenters**are in charge of loading data from the model and calling the right method in the view when the result is ready. They subscribe to Observables returned by the data manager. Therefore, they have to handle things like[schedulers](http://reactivex.io/documentation/scheduler.html)and[subscriptions](http://reactivex.io/RxJava/javadoc/rx/Subscription.html). Moreover, they can analyse error codes or apply extra operations to the data stream if needed. For example, if we need to filter some data and this same filter is not likely to be reused anywhere else, it may make more sense to implement it in the presenter rather than in the data manager.
 
