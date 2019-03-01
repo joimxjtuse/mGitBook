@@ -33,3 +33,39 @@ The main issue with this approach was that the View layer had too many responsib
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
