@@ -42,7 +42,11 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 的支持，同时它的使用也非常友好。
 
-大多数Helper类中提供的开放方法返回的都是RxJava Observable。**DataManager**是架构的核心。
+大多数Helper类中提供的开放方法返回的都是RxJava Observable。**DataManager**是架构的核心。它广泛的使用RxJava提供的combine、filter和transfer操作来处理Helper类中返回的数据。**DataManager**的目的是为UI层（Activitties/Fragments）提供不在需要再次转换的数据来减少UI层的工作量。
+
+
+
+TheDataManageris是建筑的大脑。它广泛使用RxJava运算符来组合，过滤和转换从辅助类中检索的数据。 DataManager的目的是通过提供准备显示且通常不需要任何转换的数据来减少活动和片段必须完成的工作量。
 
 
 
@@ -156,6 +160,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                            
+[                                              
 ](https://twitter.com/ivacf)
 
