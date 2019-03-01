@@ -2,6 +2,8 @@
 
 我们的架构之旅从标准的Activities + AsyncTasks到一种由支持RxJava的基于MVP结构的。
 
+
+
 Android开发的生态系统发展非常迅速。新的开发工具、新的SDK包以及新的博客文章，这些每周都在发生着。如果你去度假一个月，那么当你回来时，将会有一个新版本的SDK出现，同时可能有一个新版本的Google Play服务。
 
 在过去的三年中，我和我的团队（ribot）一直在做Android App的开发。这期间，构建Android App的架构技术一直在不断的发展着。本文通过我们在架构技术的工作和学习过程中的经验、教训和摸索过程来介绍App架构技术的发展过程。
@@ -31,7 +33,7 @@ The main issue with this approach was that the View layer had too many responsib
 
 # 由RxJava驱动的新框架
 
-We followed the previous approach for about two years. During that time, we made several improvements that slightly mitigated the problems described above. For example, we added several helper classes to reduce the code in Activities and Fragments and we started using[Volley](http://developer.android.com/training/volley/index.html)in the APIProvider. Despite these changes, our application code wasn’t yet test-friendly and the_callback hell_issue was still happening too often.
+We followed the previous approach for about two years. During that time, we made several improvements that slightly mitigated the problems described above. For example, we added several helper classes to reduce the code in Activities and Fragments and we started using[Volley](http://developer.android.com/training/volley/index.html)in the APIProvider. Despite these changes, our application code wasn’t yet test-friendly and the\_callback hell\_issue was still happening too often.
 
 It wasn’t until 2014 when we started reading about[RxJava](http://reactivex.io/). After trying it on a few sample projects, we realised that this could finally be the solution to the nested callback problem. If you are not familiar with reactive programming you can read[this introduction](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754). In short,RxJava allows you to manage data via asynchronous streams and gives you many[operators](http://reactivex.io/documentation/operators.html)that you can apply to the stream in order to transform, filter or combine the data.
 
@@ -43,6 +45,7 @@ Taking into account the pains we experienced in previous years, we started to th
 * PreferencesHelper: reads and saves data in SharedPreferences.
 
 * DatabaseHelper: handles accessing SQLite databases.
+
 * [Retrofit](https://github.com/square/retrofit)
   services: perform calls to REST APIs. We started using Retrofit instead of Volley because it provides support for RxJava. It’s also nicer to use.
 
@@ -76,9 +79,9 @@ public Observable<Post> loadTodayPosts() {
 
 Components in the**view layer**such as Activities or Fragments would simply call this method and subscribe to the returned Observable. Once the subscription finishes, the different Posts emitted by the Observable can be directly added to an Adapter in order to be displayed on a RecyclerView or similar.
 
-The last element of this architecture is the**event bus**. The event bus allows us to broadcast events that happen in the data layer, so that multiple components in the view layer can subscribe to these events. For example, a_signOut\(\)_method in the DataManager can post an event when the Observable completes so that multiple Activities that are subscribed to this event can change their UI to show a signed out state.
+The last element of this architecture is the**event bus**. The event bus allows us to broadcast events that happen in the data layer, so that multiple components in the view layer can subscribe to these events. For example, a\_signOut\(\)\_method in the DataManager can post an event when the Observable completes so that multiple Activities that are subscribed to this event can change their UI to show a signed out state.
 
-# Why was this approach better?
+# Why was this approach better?
 
 * RxJava Observables and operators remove the need for having nested callbacks.
 
@@ -88,7 +91,7 @@ The last element of this architecture is the**event bus**. The event bus allows 
 * Moving code from Activities and Fragments to the DataManager and helpers means that writing unit tests becomes easier.
 * Clear separation of responsibilities and having the DataManager as the only point of interaction with the data layer, makes this architecture**test-friendly**Helper classes or the DataManager can be easily mocked.
 
-#### What problems did we still have? {#27ce}
+#### What problems did we still have? {#27ce}
 
 * For large and very complex projects the DataManager can become too bloated and difficult to maintain.
 
@@ -102,7 +105,7 @@ In the past year, several architectural patterns such as MVP or MVVM have been g
 
 **Presenters**are in charge of loading data from the model and calling the right method in the view when the result is ready. They subscribe to Observables returned by the data manager. Therefore, they have to handle things like[schedulers](http://reactivex.io/documentation/scheduler.html)and[subscriptions](http://reactivex.io/RxJava/javadoc/rx/Subscription.html). Moreover, they can analyse error codes or apply extra operations to the data stream if needed. For example, if we need to filter some data and this same filter is not likely to be reused anywhere else, it may make more sense to implement it in the presenter rather than in the data manager.
 
-Below you can see what a public method in the presenter would look like. This code subscribes to the Observable returned by the_dataManager.loadTodayPosts\(\)_method we defined in the previous section.
+Below you can see what a public method in the presenter would look like. This code subscribes to the Observable returned by the\_dataManager.loadTodayPosts\(\)\_method we defined in the previous section.
 
 ```
 public void loadTodayPosts() {
@@ -130,21 +133,35 @@ public void loadTodayPosts() {
     }
 ```
 
+The mMvpView is the view component that this presenter is assisting. Usually the MVP view is an instance of an Activity, Fragment or ViewGroup.
 
+Like the previous architecture, the**view layer**contains standard framework components like ViewGroups, Fragments or Activities. The main difference is that these components don’t subscribe directly to Observables. They instead implement an MvpView interface and provide a list of**concise**methods such as_showError\(\)_or_showProgressIndicator\(\)_. The view components are also in charge of handling user interactions such as click events and act accordingly by calling the right method in the presenter. For example, if we have a button that loads the list of posts, our Activity would call_presenter.loadTodayPosts\(\)_from the onClick listener.
 
+If you want to see a full working sample of this MVP-based architecture, you can check out our
 
+[Android Boilerplate project on GitHub](https://github.com/ribot/android-boilerplate)
 
+. You can also read more about it in the
 
+[ribot’s architecture guidelines](https://github.com/ribot/android-guidelines/blob/master/architecture_guidelines/android_architecture.md)
 
+#### Why is this approach better? {#90ec}
 
+* Activities and Fragments become very lightweight. Their only responsibilities are to set up/update the UI and handle user events. Therefore, they become easier to maintain.
 
+* We can now easily write unit tests for the presenters by mocking the view layer. Before, this code was part of the view layer so we couldn’t unit test it. The whole architecture becomes very test-friendly.
+* If the data manager is becoming bloated, we can mitigate this problem by moving some code to the presenters.
 
+#### What problems do we still have? {#a51d}
 
+* Having a single data manager can still be an issue when the codebase becomes very large and complex. We haven’t reached the point where this is a real problem but we are aware that it could happen.
 
+It’s important to mention that this is not the perfect architecture. In fact, it’d be naive to think there is a unique and perfect one that will solve all your problems forever. The Android ecosystem will keep evolving at a fast pace and we have to keep up by exploring, reading and experimenting so that we can find better ways to continue building excellent Android apps.
 
+I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-
-
+[  
+](https://twitter.com/ivacf)
 
 
 
