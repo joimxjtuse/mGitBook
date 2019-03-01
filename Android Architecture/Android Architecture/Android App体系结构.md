@@ -42,7 +42,7 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 的支持，同时它的使用也非常友好。
 
-大多数Helper类中提供的开放方法返回的都是RxJava Observable、。
+大多数Helper类中提供的开放方法返回的都是RxJava Observable。
 
 Most of the public methods inside helper classes will return RxJva Observables.
 
@@ -156,6 +156,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                        
+[                                          
 ](https://twitter.com/ivacf)
 
