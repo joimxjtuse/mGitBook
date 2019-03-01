@@ -34,18 +34,21 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 直到2014年接触了RxJava后这一情况才有所缓解。通过在几个示例项目上使用RxJava重构，我们意识到这才是解决“回调地狱”问题的终极解决方案（如果你不熟悉**反应式编程**，可以阅读这篇文章：[https://gist.github.com/staltz/868e7e9bc2a7b8c1f754](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754）。)）。简而言之，RxJava允许通过异步流来管理数据，同时提供了许多对流的操作，比如转换\(transfer\)、过滤\(filter\)和比较\(compare\)。
 
 考虑到前几年开发过程中的痛苦，我们开始考虑新的App架构该怎么设计。所以我们提出了下面的设计结构。  
-![](/assets/RxJava-driven architecture.png)与第一个设计图类似，这一结构也有分为数据层和视图层。数据层包括DataManager和一系列Helper类。视图层由一系列Android组件组成：Activities、Fragments、ViewGroup，等等≥
+![](/assets/RxJava-driven architecture.png)与第一个设计图类似，这一结构也有分为数据层和视图层。数据层包括DataManager和一系列Helper类。视图层由一系列Android组件组成：Activities、Fragments、ViewGroup，等等。每一个Helper类都有具体的职责，并且实现起来都很简洁。例如，大多数项目都有访问REST API的Helper，从数据库读取数据或与第三方SDK交互。不同的应用程序将有不同数量的Helpers，但最常见的是：
 
-Similar to the first approach, this architecture can be separated into a data and view layer. The**data layer**contains the DataManager and a set of helpers. The**view layer**is formed by Android framework components like Fragments, Activities, ViewGroups, etc.
+* PreferencesHelper：从SharedPreferences读/写数据；
+* DatabaseHelper：访问SQLite数据库；
+* Retrofit services：执行对REST APIs的调用。我们开始使用Retrofit来替换Volley，是因为它提供了对RxJava
 
-**Helper classes**\(third column on diagram\) have very specific responsibilities and implement them in a concise manner. For example, most projects have helpers for accessing REST APIs, reading data from databases or interacting with third party SDKs. Different applications will have a different number of helpers but the most common ones are:
+的支持，同时它的使用也非常友好。
+
+
 
 * PreferencesHelper: reads and saves data in SharedPreferences.
 
 * DatabaseHelper: handles accessing SQLite databases.
 
-* [Retrofit](https://github.com/square/retrofit)  
-  services: perform calls to REST APIs. We started using Retrofit instead of Volley because it provides support for RxJava. It’s also nicer to use.
+* [Retrofit](https://github.com/square/retrofit) services: perform calls to REST APIs. We started using Retrofit instead of Volley because it provides support for RxJava. It’s also nicer to use.
 
 Most of the public methods inside helper classes will return RxJava Observables.
 
@@ -159,6 +162,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                  
+[                                    
 ](https://twitter.com/ivacf)
 
