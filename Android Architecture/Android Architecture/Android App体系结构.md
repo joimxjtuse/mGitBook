@@ -126,29 +126,25 @@ public void loadTodayPosts() {
 
 mMvpView是Presenter在处理的View组件。通常，MVP的View是指Activity、Fragment或ViewGroup的实例。
 
-与先前的体系结构一样，View层包含标准框架组件，如ViewGroups，Fragments或Activities。主要区别在于这些组件不直接订阅Observables。它们实现了一个MvpView接口，并提供了一些简明的方法，如showError\(\)或showProgressIndicator\(\)。视图组件还负责处理用户交互（例如单击事件）并通过在演示者中调用正确的方法来相应地执行操作。例如，如果我们有一个加载帖子列表的按钮，我们的Activity将从onClick监听器调用presenter.loadTodayPosts（）。
+与先前的体系结构一样，View层包含标准框架组件，如ViewGroups，Fragments或Activities。主要区别在于**这些组件不直接订阅Observables**。它们实现了一个MvpView接口，并提供了一些简明的方法，如showError\(\)或showProgressIndicator\(\)。View组件还负责处理用户交互（例如单击事件）并通过在Presenter中调用正确的方法来执行相应地操作。例如，如果我们有一个加载帖子列表的按钮，我们的Activity将从onClick监听器调用presenter.loadTodayPosts\(\)。
 
-Like the previous architecture, the**view layer**contains standard framework components like ViewGroups, Fragments or Activities. The main difference is that these components don’t subscribe directly to Observables. They instead implement an MvpView interface and provide a list of**concise**methods such as_showError\(\)\_or\_showProgressIndicator\(\)_. The view components are also in charge of handling user interactions such as click events and act accordingly by calling the right method in the presenter. For example, if we have a button that loads the list of posts, our Activity would call\_presenter.loadTodayPosts\(\)\_from the onClick listener.
+如果想要看到全部的MVP结构代码，可以查看Android Boilerplate项目：
 
-If you want to see a full working sample of this MVP-based architecture, you can check out our
+**https://github.com/ribot/android-boilerplate**
 
-[Android Boilerplate project on GitHub](https://github.com/ribot/android-boilerplate)
+还可以在这里看到更多内容：
 
-. You can also read more about it in the
-
-[ribot’s architecture guidelines](https://github.com/ribot/android-guidelines/blob/master/architecture_guidelines/android_architecture.md)
+**https://github.com/ribot/android-guidelines/blob/master/architecture\_guidelines/android\_architecture.md**
 
 #### 为什么这一设计更好? {#90ec}
 
-* Activities and Fragments become very lightweight. Their only responsibilities are to set up/update the UI and handle user events. Therefore, they become easier to maintain.
-
-* We can now easily write unit tests for the presenters by mocking the view layer. Before, this code was part of the view layer so we couldn’t unit test it. The whole architecture becomes very test-friendly.
-
-* If the data manager is becoming bloated, we can mitigate this problem by moving some code to the presenters.
+* Activity和Fragment变得非常轻量级。它们的责任只有设置/更新UI和响应用户的event。因此，它们实现起来很简单。
+* 我们现在可以通过模拟View层轻松地为Presenter编写单元测试。之前，此代码是View层的一部分，因此我们无法对其进行单元测试。整个架构变得非常适合测试；
+* 如果data manager变得臃肿，我们可以把部分代码移到Presenter来缓解。
 
 #### 我们还有什么问题? {#a51d}
 
-* Having a single data manager can still be an issue when the codebase becomes very large and complex. We haven’t reached the point where this is a real problem but we are aware that it could happen.
+* 当代码库变得非常庞大和复杂时，单个的DataManager仍然是一个问题。我们还没有达到这个真正问题的程度，但我们知道它可能会发生。
 
 值得一提的是，这不是完美的架构。事实上，认为有一种独特而完美的东西可以永远解决你所有的问题，是天真的。 Android生态系统将继续快速发展，我们必须通过探索、阅读和试验来拥抱这些变化，以便能够找到更好的方法来持续构建优秀的Android应用程序。
 
