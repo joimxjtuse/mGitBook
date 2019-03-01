@@ -92,8 +92,6 @@ View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法
 
 在过去的一年中，MVP或MVVM等几种架构模式在Android社区中越来越受欢迎。在对这些模式的示例项目和文章探索之后，我们发现MVP可以为我们现有的方法带来非常有价值的改进。因为我们当前的架构分为两层（View和Data），所以添加MVP感觉很自然。我们只需添加一个新的**Presenter**层，并将部分代码从View层移动到**Presenter**。
 
-In the past year, several architectural patterns such as MVP or MVVM have been gaining popularity within the Android community. After exploring these patterns on a sample project and article, we found that MVP could bring very valuable improvements to our existing aproach. Because our current architecture was divided in two layers \(view and data\), adding MVP felt natural. We simply had to add a new layer of presenters and move part of the code from the view to presenters.
-
 ![](/assets/MVP-based architecture.png)The data layer remains as it was but it’s now called**model**to be more consistent with the name of the pattern.
 
 **Presenters**are in charge of loading data from the model and calling the right method in the view when the result is ready. They subscribe to Observables returned by the data manager. Therefore, they have to handle things like[schedulers](http://reactivex.io/documentation/scheduler.html)and[subscriptions](http://reactivex.io/RxJava/javadoc/rx/Subscription.html). Moreover, they can analyse error codes or apply extra operations to the data stream if needed. For example, if we need to filter some data and this same filter is not likely to be reused anywhere else, it may make more sense to implement it in the presenter rather than in the data manager.
@@ -154,6 +152,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                                              
+[                                                                
 ](https://twitter.com/ivacf)
 
