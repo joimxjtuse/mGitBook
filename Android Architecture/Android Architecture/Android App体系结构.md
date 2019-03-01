@@ -33,14 +33,6 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 直到2014年接触了RxJava后这一情况才有所缓解。通过在几个示例项目上使用RxJava重构，我们意识到这才是解决“回调地狱”问题的终极解决方案（如果你不熟悉**反应式编程**，可以阅读这篇文章：[https://gist.github.com/staltz/868e7e9bc2a7b8c1f754](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754）。)）。简而言之，RxJava允许通过异步流来管理数据，同时提供了许多对流的操作，比如转换\(transfer\)、过滤\(filter\)和比较\(compare\)。
 
-
-
-```
-简而言之，RxJava允许您通过异步流管理数据，并为您提供许多可以应用于流的操作员，以便转换，过滤或组合数据。
-```
-
-It wasn’t until 2014 when we started reading about[RxJava](http://reactivex.io/). After trying it on a few sample projects, we realised that this could finally be the solution to the nested callback problem. If you are not familiar with reactive programming you can read[this introduction](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754). In short,RxJava allows you to manage data via asynchronous streams and gives you many[operators](http://reactivex.io/documentation/operators.html)that you can apply to the stream in order to transform, filter or combine the data.
-
 Taking into account the pains we experienced in previous years, we started to think about how the architecture of a new app would look. So we came up with this.  
 ![](/assets/RxJava-driven architecture.png)Similar to the first approach, this architecture can be separated into a data and view layer. The**data layer**contains the DataManager and a set of helpers. The**view layer**is formed by Android framework components like Fragments, Activities, ViewGroups, etc.
 
@@ -165,6 +157,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                          
+[                            
 ](https://twitter.com/ivacf)
 
