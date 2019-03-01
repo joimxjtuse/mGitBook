@@ -8,7 +8,13 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 # 过去
 
-2012年，我们的代码库主要遵循Android的基本结构。我们没有使用任何网络库，AsyncTasks仍然使我们的朋友。下图展示了当时的架构组织。
+2012年，我们的代码库主要遵循Android的基本结构。我们没有使用任何网络库，AsyncTasks仍然使我们的朋友。下图展示了当时的架构组织。![](/assets/Initial architecture.png)        
 
-![](/assets/Initial architecture.png)
+代码可以分为两层：数据层从REST APIs和数据库中读/写数据；UI层的责任是将数据展示到UI上。
+
+The code was structured in two layers: the**data layer**that was in charge of retrieving/saving data from REST APIs and persistent data stores; and the**view layer,**whose responsibility was handling and displaying the data on the UI.
+
+The**APIProvider**provides methods to enable Activities and Fragments to easily interact with the REST API. These methods use URLConnection and AsyncTasks to perform network calls in a separate thread and return the result to the Activities via callbacks.
+
+In a similar way, the**CacheProvider**contains methods that retrieve and store data from SharedPreferences or a SQLite database. It also uses callbacks to pass the result back to the Activities.
 
