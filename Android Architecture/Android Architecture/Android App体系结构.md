@@ -29,7 +29,7 @@ The main issue with this approach was that the View layer had too many responsib
 * 过多的嵌套回调使得代码非常丑陋且难以理解，同时更改代码或添加信得功能非常困难；
 * 单元测试很难实现，甚至不可能实现。因为很多业务逻辑都在Activities/Fragments内实现，这些业务想实现单元测试是困难的。
 
-
+# 由RxJava驱动的新框架
 
 
 
