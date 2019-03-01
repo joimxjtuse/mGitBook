@@ -94,17 +94,9 @@ View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法
 
 ![](/assets/MVP-based architecture.png)Data层保持原样，但是现在它称作Model层，zh恶业与MVP模式保持一致。
 
-**Presenter**负责向**Model**请求数据并在获取到结果后调用U的方法。**Presenter**订阅了Datamanager数据返回的Obervable。因此，它必须处理调度程序（[schedulers](http://reactivex.io/documentation/scheduler.html)）和订阅等事件（[subscriptions](http://reactivex.io/RxJava/javadoc/rx/Subscription.html)）。
+**Presenter**负责向**Model**请求数据并在获取到结果后调用U的方法。**Presenter**订阅了Datamanager数据返回的Obervable。因此，它必须处理调度程序（[schedulers](http://reactivex.io/documentation/scheduler.html)）和订阅等事件（[subscriptions](http://reactivex.io/RxJava/javadoc/rx/Subscription.html)）。此外，如果需要，他们可以分析错误代码或对数据流执行额外的操作。例如，如果我们需要过滤一些数据并且这个过滤器不可能在其他地方重复使用，那么在Presenter而不是DataManager中实现它可能更有意义。
 
-
-
-演示者负责从模型加载数据，并在结果准备好时在视图中调用正确的方法。他们订阅了数据管理器返回的Observable。因此，他们必须处理调度程序和订阅等事情。此外，如果需要，他们可以分析错误代码或对数据流应用额外的操作。例如，如果我们需要过滤一些数据并且这个过滤器不可能在其他地方重复使用，那么在演示者而不是数据管理器中实现它可能更有意义。
-
-
-
-**Presenters**are in charge of loading data from the model and calling the right method in the view when the result is ready. They subscribe to Observables returned by the data manager. Therefore, they have to handle things like[schedulers](http://reactivex.io/documentation/scheduler.html)and[subscriptions](http://reactivex.io/RxJava/javadoc/rx/Subscription.html). Moreover, they can analyse error codes or apply extra operations to the data stream if needed. For example, if we need to filter some data and this same filter is not likely to be reused anywhere else, it may make more sense to implement it in the presenter rather than in the data manager.
-
-Below you can see what a public method in the presenter would look like. This code subscribes to the Observable returned by the\_dataManager.loadTodayPosts\(\)\_method we defined in the previous section.
+下面的示例，是一个Presenter中的方法，它订阅了上一节提到的dataManager.loadTodayPosts\(\)返回的Observable。
 
 ```
 public void loadTodayPosts() {
