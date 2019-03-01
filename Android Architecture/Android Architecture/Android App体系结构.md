@@ -12,9 +12,5 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 代码可以分为两层：数据层从REST APIs和数据库中读/写数据；UI层的责任是将数据展示到UI上。APIProvider提供了使Activities和Fragments与REST APIs交互的方法，这些方法有：使用URLConnection和AsyncTasks在独立的线程中来执行网络操作并将结果回调给Activities。类似的，CacheProviderti提供了在SharedPreferences或SQLite数据库读/写数据的方法，它同样使用了回调将结果返回给Activitties。
 
-The code was structured in two layers: the**data layer**that was in charge of retrieving/saving data from REST APIs and persistent data stores; and the**view layer,**whose responsibility was handling and displaying the data on the UI.
 
-The**APIProvider**provides methods to enable Activities and Fragments to easily interact with the REST API. These methods use URLConnection and AsyncTasks to perform network calls in a separate thread and return the result to the Activities via callbacks.
-
-In a similar way, the**CacheProvider**contains methods that retrieve and store data from SharedPreferences or a SQLite database. It also uses callbacks to pass the result back to the Activities.
 
