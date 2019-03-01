@@ -17,7 +17,7 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 1. 访问APIProvider中的_loadPosts\(callback\)；_
 2. 等待APIProvider的成功回调并访问CacheProvider中的_savePosts\(callback\)；_
 3. 等待CacheProvider的成功回调后将数据展示到ListView；
-4. 单独处理APIProvider和CacheProvider中潜在的错误回调；
+4. 单独处理APIProvider和CacheProvider中潜在的错误回调。
 
 这是一个非常简单的例子。在实际情况中，REST API返回的数据可能不是View层直接需要的。因此，在显示数据之前，Activity可能需要以某种方式转换或过滤数据。另一种常见情况，loadPostst\(\)方法获取需要从其他位置获取的参数，例如Play Services SDK提供的电子邮件地址。 SDK可能会使用回调异步返回电子邮件，这意味着我们现在有三个级别的嵌套回调。如果我们不断增加复杂性，这种设计将导致我们称为“回调地狱”的结果。
 
@@ -161,6 +161,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[            
+[              
 ](https://twitter.com/ivacf)
 
