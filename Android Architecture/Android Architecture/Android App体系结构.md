@@ -46,15 +46,9 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 TheDataManageris是建筑的大脑。它广泛使用RxJava运算符来组合，过滤和转换从辅助类中检索的数据。 DataManager的目的是通过提供准备显示且通常不需要任何转换的数据来减少活动和片段必须完成的工作量。下面的代码展示了**DataManager**方法的示例。这些代做了下面的事情：
 
-
-
-The**DataManager**is the brain of the architecture. It extensively uses RxJava operators to combine, filter and transform data retrieved from helper classes. The aim of the DataManager is to reduce the amount of work that Activities and Fragments have to do by providing data that is ready to display and won’t usually need any transformation.
-
-The code below shows what a DataManager method would look like. This sample method works as follows：
-
-1. Call the Retrofit service to load a list of blog posts from a REST API
-2. Save the posts in a local database for caching purposes using the DatabaseHelper.
-3. Filter the blog posts written today because those are the only ones the view layer wants to display.
+1. 访问Retrofit service，通过REST API请求博客帖子列表；
+2. 借助DatabaseHelper，将帖子内容保存在本地数据库中达到缓存的目的；
+3. 过滤出今天的帖子，因为这才是UI层想要展示的。
 
 ```
 public Observable<Post> loadTodayPosts() {
@@ -158,6 +152,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                                
+[                                                  
 ](https://twitter.com/ivacf)
 
