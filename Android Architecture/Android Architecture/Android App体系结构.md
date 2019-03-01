@@ -126,7 +126,7 @@ public void loadTodayPosts() {
 
 mMvpView是Presenter在处理的View组件。通常，MVP的View是指Activity、Fragment或ViewGroup的实例。
 
-与以前的体系结构一样，View层包含标准框架组件，如ViewGroups，Fragments或Activities。主要区别在于这些组件不直接订阅Observables。它们实现了一个MvpView接口，并提供了一些简明的方法，如showError\(\)或showProgressIndicator\(\)。视图组件还负责处理用户交互（例如单击事件）并通过在演示者中调用正确的方法来相应地执行操作。例如，如果我们有一个加载帖子列表的按钮，我们的Activity将从onClick监听器调用presenter.loadTodayPosts（）。
+与先前的体系结构一样，View层包含标准框架组件，如ViewGroups，Fragments或Activities。主要区别在于这些组件不直接订阅Observables。它们实现了一个MvpView接口，并提供了一些简明的方法，如showError\(\)或showProgressIndicator\(\)。视图组件还负责处理用户交互（例如单击事件）并通过在演示者中调用正确的方法来相应地执行操作。例如，如果我们有一个加载帖子列表的按钮，我们的Activity将从onClick监听器调用presenter.loadTodayPosts（）。
 
 Like the previous architecture, the**view layer**contains standard framework components like ViewGroups, Fragments or Activities. The main difference is that these components don’t subscribe directly to Observables. They instead implement an MvpView interface and provide a list of**concise**methods such as_showError\(\)\_or\_showProgressIndicator\(\)_. The view components are also in charge of handling user interactions such as click events and act accordingly by calling the right method in the presenter. For example, if we have a button that loads the list of posts, our Activity would call\_presenter.loadTodayPosts\(\)\_from the onClick listener.
 
