@@ -31,7 +31,7 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 
 两年的时间，我们都在维护上面的结构。这段时间里，我们也做过一些改善措施，来缓解上面提到的几个问题。比如，我们添加了一些Helper类，将一些业务从Activities/Fragments里剥离，在APIProvider内，我们使用Volley。即使有着一系列改变，我们的代码也没有解决测试不友好的问题，而且“嵌套地狱”的问题仍然在发生。
 
-直到2014年接触RxJava后这一情况才有所缓解。
+直到2014年接触RxJava后这一情况才有所缓解。那时，
 
 We followed the previous approach for about two years. During that time, we made several improvements that slightly mitigated the problems described above. For example, we added several helper classes to reduce the code in Activities and Fragments and we started using[Volley](http://developer.android.com/training/volley/index.html)in the APIProvider. Despite these changes, our application code wasn’t yet test-friendly and the\_callback hell\_issue was still happening too often.
 
@@ -161,6 +161,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[          
+[            
 ](https://twitter.com/ivacf)
 
