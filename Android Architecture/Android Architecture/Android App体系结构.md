@@ -70,27 +70,23 @@ public Observable<Post> loadTodayPosts() {
 
 View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法并且订阅得到返回值的Observable事件。订阅完成后，Observable发出的不同帖子可以直接添加到适配器，以便在RecyclerView或类似Ui上显示。
 
-该架构的最后一个元素是E**vent Bus**。Event Bus允许我们广播数据层的事件，以便View层中的多个组件可以订阅这些事件。例如，在DataManager中的signOut\(\)方法中可以在Observable完成时发布事件，以便订阅此事件的多个活动可以更改其UI以显示已注销状态。
+该架构的最后一个元素是E**vent Bus**。Event Bus允许我们广播数据层的事件，以便View层中的多个组件可以订阅这些事件。例如，在DataManager中的signOut\(\)方法中可以在Observable完成时发布一event，多个Activities可以订阅这一事件，在注销事件发生后更改UI状态为注销。以便订阅此事件的多个活动可以更改其UI以显示已注销状态。
 
-The last element of this architecture is the**event bus**. The event bus allows us to broadcast events that happen in the data layer, so that multiple components in the view layer can subscribe to these events. For example, a\_signOut\(\)\_method in the DataManager can post an event when the Observable completes so that multiple Activities that are subscribed to this event can change their UI to show a signed out state.
+# 为什么这一结构更好?
 
-# Why was this approach better?
-
-* RxJava Observables and operators remove the need for having nested callbacks.
+* RxJava Observables和运算符不需要嵌套回调。
 
 ![](/assets/callback hell.png)
 
-* The DataManager takes over responsibilities that were previously part of the view layer. Hence, it makes Activities and Fragments more lightweight.
-* Moving code from Activities and Fragments to the DataManager and helpers means that writing unit tests becomes easier.
-* Clear separation of responsibilities and having the DataManager as the only point of interaction with the data layer, makes this architecture**test-friendly**Helper classes or the DataManager can be easily mocked.
+* DataManager接管了以前属于视图层的职责。这使得Activies、Fragments更加轻量级；
+* 将Activities、Fragments中的代码移到DataManger/Helper意味着单元测试变得容易；
+* 将各类的职责清楚地分离，并将DataManager作为与数据层交互的唯一点，使得这种架构测试更加友好。Helper类或DataManager特更易模拟。
 
-#### What problems did we still have? {#27ce}
+#### 我们还有什么问题吗？? {#27ce}
 
-* For large and very complex projects the DataManager can become too bloated and difficult to maintain.
+* 对于大型或复杂的项目，DataManager可能会变得过于臃肿且难以维护；
 
-* Although view layer components such as Activities and Fragments became more lightweight, they still have to handle a considerable amount of logic around managing RxJava subscriptions, analysing errors, etc.
-
-# Integrating Model View Presenter
+* 尽管View层的组件变得轻量级，但是依然需要有处理大量管理RxJava订阅，分析错误，等等的逻辑。Integrating Model View Presenter
 
 In the past year, several architectural patterns such as MVP or MVVM have been gaining popularity within the Android community. After exploring these patterns on a sample project and article, we found that MVP could bring very valuable improvements to our existing aproach. Because our current architecture was divided in two layers \(view and data\), adding MVP felt natural. We simply had to add a new layer of presenters and move part of the code from the view to presenters.
 
@@ -154,6 +150,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                                        
+[                                                          
 ](https://twitter.com/ivacf)
 
