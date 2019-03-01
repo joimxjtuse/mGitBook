@@ -68,6 +68,8 @@ public Observable<Post> loadTodayPosts() {
 }
 ```
 
+View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法并且订阅得到返回值的事件（即Observable）。
+
 Components in the**view layer**such as Activities or Fragments would simply call this method and subscribe to the returned Observable. Once the subscription finishes, the different Posts emitted by the Observable can be directly added to an Adapter in order to be displayed on a RecyclerView or similar.
 
 The last element of this architecture is the**event bus**. The event bus allows us to broadcast events that happen in the data layer, so that multiple components in the view layer can subscribe to these events. For example, a\_signOut\(\)\_method in the DataManager can post an event when the Observable completes so that multiple Activities that are subscribed to this event can change their UI to show a signed out state.
@@ -152,6 +154,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                                  
+[                                                    
 ](https://twitter.com/ivacf)
 
