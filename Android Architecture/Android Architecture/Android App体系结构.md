@@ -23,7 +23,13 @@ The main issue with this approach was that the View layer had too many responsib
 
 这是一个非常简单的例子。在实际情况中，REST API返回的数据可能不是View层直接需要的。因此，在显示数据之前，Activity可能需要以某种方式转换或过滤数据。另一种常见情况，loadPostst\(\)方法获取需要从其他位置获取的参数，例如Play Services SDK提供的电子邮件地址。 SDK可能会使用回调异步返回电子邮件，这意味着我们现在有三个级别的嵌套回调。如果我们不断增加复杂性，这种设计将导致我们称为“回调地狱”的结果。
 
-This is a very simple example. In a real case scenario the REST API will probably not return the data like the view needs it. Therefore, the Activity will have to somehow transform or filter the data before showing it. Another common case is when the loadPosts\(\) method takes a parameter that needs to be fetched from somewhere else, for example an email address provided by the Play Services SDK. It’s likely that the SDK will return the email asynchronously using a callback, meaning that we now have three levels of nested callbacks. If we keep adding complexity, this approach will result into what is known as callback hell.
+最终，
+
+* Activities、Fragments变得异常庞大且难以维护；
+* 过多的嵌套回调使得代码非常丑陋且难以理解，同时更改代码或添加信得功能非常困难；
+* 单元测试很难实现，甚至不可能实现。因为很多业务逻辑都在Activities/Fragments内实现，这些业务想实现单元测试是困难的。
+
+
 
 
 
