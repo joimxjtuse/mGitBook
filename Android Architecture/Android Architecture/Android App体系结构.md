@@ -70,13 +70,7 @@ public Observable<Post> loadTodayPosts() {
 
 View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法并且订阅得到返回值的Observable事件。订阅完成后，Observable发出的不同帖子可以直接添加到适配器，以便在RecyclerView或类似Ui上显示。
 
-
-
-该架构的最后一个元素是E**vent Bus**。
-
-该架构的最后一个元素是事件总线。事件总线允许我们广播在数据层中发生的事件，以便视图层中的多个组件可以订阅这些事件。例如，DataManager中的a\_signOut（）\_方法可以在Observable完成时发布事件，以便订阅此事件的多个活动可以更改其UI以显示已注销状态。
-
-Components in the**view layer**such as Activities or Fragments would simply call this method and subscribe to the returned Observable. Once the subscription finishes, the different Posts emitted by the Observable can be directly added to an Adapter in order to be displayed on a RecyclerView or similar.
+该架构的最后一个元素是E**vent Bus**。Event Bus允许我们广播数据层的事件，以便View层中的多个组件可以订阅这些事件。例如，在DataManager中的signOut\(\)方法中可以在Observable完成时发布事件，以便订阅此事件的多个活动可以更改其UI以显示已注销状态。
 
 The last element of this architecture is the**event bus**. The event bus allows us to broadcast events that happen in the data layer, so that multiple components in the view layer can subscribe to these events. For example, a\_signOut\(\)\_method in the DataManager can post an event when the Observable completes so that multiple Activities that are subscribed to this event can change their UI to show a signed out state.
 
@@ -160,6 +154,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                                      
+[                                                        
 ](https://twitter.com/ivacf)
 
