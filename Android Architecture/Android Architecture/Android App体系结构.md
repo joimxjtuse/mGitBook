@@ -2,8 +2,6 @@
 
 我们的架构之旅从标准的Activities + AsyncTasks到一种由支持RxJava的基于MVP结构的。
 
-
-
 Android开发的生态系统发展非常迅速。新的开发工具、新的SDK包以及新的博客文章，这些每周都在发生着。如果你去度假一个月，那么当你回来时，将会有一个新版本的SDK出现，同时可能有一个新版本的Google Play服务。
 
 在过去的三年中，我和我的团队（ribot）一直在做Android App的开发。这期间，构建Android App的架构技术一直在不断的发展着。本文通过我们在架构技术的工作和学习过程中的经验、教训和摸索过程来介绍App架构技术的发展过程。
@@ -13,8 +11,6 @@ Android开发的生态系统发展非常迅速。新的开发工具、新的SDK�
 2012年，我们的代码库主要遵循Android的基本结构。我们没有使用任何网络库，AsyncTasks仍然使我们的朋友。下图展示了当时的架构组织。![](/assets/Initial architecture.png)代码可以分为两层：数据层从REST APIs和数据库中读/写数据；UI层的责任是将数据展示到UI上。APIProvider提供了使Activities和Fragments与REST APIs交互的方法，这些方法有：使用URLConnection和AsyncTasks在独立的线程中来执行网络操作并将结果回调给Activities。类似的，CacheProviderti提供了在SharedPreferences或SQLite数据库读/写数据的方法，它同样使用了回调将结果返回给Activitties。
 
 # 问题
-
-The main issue with this approach was that the View layer had too many responsibilities. Imagine a simple common scenario where the application has to load a list of blog posts, cache them in a SQLite database and finally display them on a ListView. The Activity would have to do the following:
 
 这一结构的主要问题在于View层承担了过多的责任。一个常见的情景，某个应用需要加载一个博客帖子列表，然后将这个列表存储到SQLite数据库中，同时将这些数据展示到ListView中，这一系列活动需要执行下面的操作：
 
@@ -46,7 +42,7 @@ Taking into account the pains we experienced in previous years, we started to th
 
 * DatabaseHelper: handles accessing SQLite databases.
 
-* [Retrofit](https://github.com/square/retrofit)
+* [Retrofit](https://github.com/square/retrofit)  
   services: perform calls to REST APIs. We started using Retrofit instead of Volley because it provides support for RxJava. It’s also nicer to use.
 
 Most of the public methods inside helper classes will return RxJava Observables.
@@ -135,7 +131,7 @@ public void loadTodayPosts() {
 
 The mMvpView is the view component that this presenter is assisting. Usually the MVP view is an instance of an Activity, Fragment or ViewGroup.
 
-Like the previous architecture, the**view layer**contains standard framework components like ViewGroups, Fragments or Activities. The main difference is that these components don’t subscribe directly to Observables. They instead implement an MvpView interface and provide a list of**concise**methods such as_showError\(\)_or_showProgressIndicator\(\)_. The view components are also in charge of handling user interactions such as click events and act accordingly by calling the right method in the presenter. For example, if we have a button that loads the list of posts, our Activity would call_presenter.loadTodayPosts\(\)_from the onClick listener.
+Like the previous architecture, the**view layer**contains standard framework components like ViewGroups, Fragments or Activities. The main difference is that these components don’t subscribe directly to Observables. They instead implement an MvpView interface and provide a list of**concise**methods such as_showError\(\)\_or\_showProgressIndicator\(\)_. The view components are also in charge of handling user interactions such as click events and act accordingly by calling the right method in the presenter. For example, if we have a button that loads the list of posts, our Activity would call\_presenter.loadTodayPosts\(\)\_from the onClick listener.
 
 If you want to see a full working sample of this MVP-based architecture, you can check out our
 
@@ -145,14 +141,15 @@ If you want to see a full working sample of this MVP-based architecture, you can
 
 [ribot’s architecture guidelines](https://github.com/ribot/android-guidelines/blob/master/architecture_guidelines/android_architecture.md)
 
-#### Why is this approach better? {#90ec}
+#### Why is this approach better? {#90ec}
 
 * Activities and Fragments become very lightweight. Their only responsibilities are to set up/update the UI and handle user events. Therefore, they become easier to maintain.
 
 * We can now easily write unit tests for the presenters by mocking the view layer. Before, this code was part of the view layer so we couldn’t unit test it. The whole architecture becomes very test-friendly.
+
 * If the data manager is becoming bloated, we can mitigate this problem by moving some code to the presenters.
 
-#### What problems do we still have? {#a51d}
+#### What problems do we still have? {#a51d}
 
 * Having a single data manager can still be an issue when the codebase becomes very large and complex. We haven’t reached the point where this is a real problem but we are aware that it could happen.
 
@@ -160,8 +157,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[  
+[    
 ](https://twitter.com/ivacf)
-
-
 
