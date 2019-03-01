@@ -144,14 +144,9 @@ If you want to see a full working sample of this MVP-based architecture, you can
 
 * If the data manager is becoming bloated, we can mitigate this problem by moving some code to the presenters.
 
-#### What problems do we still have? {#a51d}
+#### 我们还有什么问题? {#a51d}
 
 * Having a single data manager can still be an issue when the codebase becomes very large and complex. We haven’t reached the point where this is a real problem but we are aware that it could happen.
 
-It’s important to mention that this is not the perfect architecture. In fact, it’d be naive to think there is a unique and perfect one that will solve all your problems forever. The Android ecosystem will keep evolving at a fast pace and we have to keep up by exploring, reading and experimenting so that we can find better ways to continue building excellent Android apps.
-
-I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
-
-[                                                                
-](https://twitter.com/ivacf)
+值得一提的是，这不是完美的架构。事实上，认为有一种独特而完美的东西可以永远解决你所有的问题，是天真的。 Android生态系统将继续快速发展，我们必须通过探索、阅读和试验来拥抱这些变化，以便能够找到更好的方法来持续构建优秀的Android应用程序。
 
