@@ -92,7 +92,7 @@ View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法
 
 在过去的一年中，MVP或MVVM等几种架构模式在Android社区中越来越受欢迎。在对这些模式的示例项目和文章探索之后，我们发现MVP可以为我们现有的方法带来非常有价值的改进。因为我们当前的架构分为两层（View和Data），所以添加MVP感觉很自然。我们只需添加一个新的**Presenter**层，并将部分代码从View层移动到**Presenter**。
 
-![](/assets/MVP-based architecture.png)Data层保持原样，但是现在它称作Model层，zh恶业与MVP模式保持一致。
+![](/assets/MVP-based architecture.png)Data层保持原样，但是现在它称作Model层，这与MVP模式保持一致。
 
 **Presenter**负责向**Model**请求数据并在获取到结果后调用U的方法。**Presenter**订阅了Datamanager数据返回的Obervable。因此，它必须处理调度程序（[schedulers](http://reactivex.io/documentation/scheduler.html)）和订阅等事件（[subscriptions](http://reactivex.io/RxJava/javadoc/rx/Subscription.html)）。此外，如果需要，他们可以分析错误代码或对数据流执行额外的操作。例如，如果我们需要过滤一些数据并且这个过滤器不可能在其他地方重复使用，那么在Presenter而不是DataManager中实现它可能更有意义。
 
@@ -124,7 +124,9 @@ public void loadTodayPosts() {
     }
 ```
 
-The mMvpView is the view component that this presenter is assisting. Usually the MVP view is an instance of an Activity, Fragment or ViewGroup.
+mMvpView是Presenter在处理的View组件。通常，MVP的View是指Activity、Fragment或ViewGroup的实例。
+
+
 
 Like the previous architecture, the**view layer**contains standard framework components like ViewGroups, Fragments or Activities. The main difference is that these components don’t subscribe directly to Observables. They instead implement an MvpView interface and provide a list of**concise**methods such as_showError\(\)\_or\_showProgressIndicator\(\)_. The view components are also in charge of handling user interactions such as click events and act accordingly by calling the right method in the presenter. For example, if we have a button that loads the list of posts, our Activity would call\_presenter.loadTodayPosts\(\)\_from the onClick listener.
 
