@@ -136,7 +136,7 @@ If you want to see a full working sample of this MVP-based architecture, you can
 
 [ribot’s architecture guidelines](https://github.com/ribot/android-guidelines/blob/master/architecture_guidelines/android_architecture.md)
 
-#### Why is this approach better? {#90ec}
+#### 为什么这一设计更好Why is this approach better? {#90ec}
 
 * Activities and Fragments become very lightweight. Their only responsibilities are to set up/update the UI and handle user events. Therefore, they become easier to maintain.
 
