@@ -86,7 +86,9 @@ View层的组件（Activities/Fragments）通过访问loadTodayPosts（）方法
 
 * 对于大型或复杂的项目，DataManager可能会变得过于臃肿且难以维护；
 
-* 尽管View层的组件变得轻量级，但是依然需要有处理大量管理RxJava订阅，分析错误，等等的逻辑。Integrating Model View Presenter
+* 尽管View层的组件变得轻量级，但是依然需要有处理大量管理RxJava订阅，分析错误，等等的逻辑。
+
+#### 集成MVP
 
 In the past year, several architectural patterns such as MVP or MVVM have been gaining popularity within the Android community. After exploring these patterns on a sample project and article, we found that MVP could bring very valuable improvements to our existing aproach. Because our current architecture was divided in two layers \(view and data\), adding MVP felt natural. We simply had to add a new layer of presenters and move part of the code from the view to presenters.
 
@@ -150,6 +152,6 @@ It’s important to mention that this is not the perfect architecture. In fact, 
 
 I hope you enjoyed this article and you found it useful. If so, don’t forget to click the**recommend**button. Also, I’d love to hear your thoughts about our latest approach.
 
-[                                                          
+[                                                            
 ](https://twitter.com/ivacf)
 
